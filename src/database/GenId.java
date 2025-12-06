@@ -9,13 +9,13 @@ public class GenId {
 
 
 
-    private static Map<Long, Long> departmentCounters = new LinkedHashMap<>();
+    private static final Map<Long, Long> departmentCounters = new LinkedHashMap<>();
 
 
-    private static Map<Long, Long> doctorCounters = new LinkedHashMap<>();
+    private static final Map<Long, Long> doctorCounters = new LinkedHashMap<>();
 
 
-    private static Map<Long, Long> patientCounters = new LinkedHashMap<>();
+    private static final Map<Long, Long> patientCounters = new LinkedHashMap<>();
 
 
 

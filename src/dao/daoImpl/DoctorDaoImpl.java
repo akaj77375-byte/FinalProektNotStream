@@ -33,7 +33,7 @@ public class DoctorDaoImpl implements DoctorDao {
                         for (Doctor doc:h.getDoctors()){
                             for (Long dokId:doctorsId){
                                 if (doc.getId().equals(dokId)){
-                                    h.getDoctors().add(doc);
+                                    d.getDoctors().add(doc);
                                 }
                             }
                         }

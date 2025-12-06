@@ -14,7 +14,7 @@ public class PatientDaoImpl implements PatientDao {
         for (Hospital h: DB.hospitals){
             if (h.getId().equals(id)){
                 for (Patient p:patients){
-                    Long newId= GenId.getPatientId(GenId.getHospitalId());
+                    Long newId= GenId.getPatientId(id);
                     p.setId(newId);
                     h.getPatients().add(p);
                 }
