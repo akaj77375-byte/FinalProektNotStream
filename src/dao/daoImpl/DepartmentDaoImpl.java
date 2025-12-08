@@ -22,9 +22,11 @@ if (h.getId().equals(id)){
     @Override
     public Department findDepartmentByName(Long hospitalId, String name) {
         for (Hospital h: DB.hospitals){
-            for (Department d:h.getDepartments()){
-                if (d.getDepartmentName().equals(name)){
-                    return d;
+            if (h.getId().equals(hospitalId)) {
+                for (Department d : h.getDepartments()) {
+                    if (d.getDepartmentName().equals(name)) {
+                        return d;
+                    }
                 }
             }
         }
