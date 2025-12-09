@@ -57,9 +57,9 @@ public class DoctorDaoImpl implements DoctorDao {
     @Override
     public List<Doctor> getAllDoctorsByDepartmentId(Long hospitalId, Long departmentId) {
         for (Hospital h:DB.hospitals){
-            if (h.getId().equals(departmentId)){
+            if (h.getId().equals(hospitalId)){
                 for (Department d: h.getDepartments()){
-                    if (d.getId().equals(hospitalId)){
+                    if (d.getId().equals(departmentId)){
                         return d.getDoctors();
                     }
                 }
@@ -87,7 +87,7 @@ public class DoctorDaoImpl implements DoctorDao {
     public void removeById(Long hospitalId,Long id) {
         for (Hospital h:DB.hospitals){
             if (h.getId().equals(hospitalId)){
-                h.getPatients().removeIf(patient -> patient.getId().equals(id));
+                h.getDoctors().removeIf(doctor -> doctor.getId().equals(id));
             }
         }
     }
@@ -95,7 +95,7 @@ public class DoctorDaoImpl implements DoctorDao {
     @Override
     public String updateById(Long hospital, Long id, Doctor doctor) {
        for (Hospital h:DB.hospitals){
-           if (h.getId().equals(id)){
+           if (h.getId().equals(hospital)){
                for (Doctor d:h.getDoctors()){
                    if (d.getId().equals(id)){
                        d.setExperienceYear(doctor.getExperienceYear());
